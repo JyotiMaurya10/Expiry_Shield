@@ -14,7 +14,7 @@ class CustomTextFormField extends StatelessWidget {
   final bool? enabled;
 
   const CustomTextFormField({
-    Key? key,
+    super.key,
     required this.controller,
     required this.labelText,
     this.keyboardType = TextInputType.text,
@@ -24,7 +24,7 @@ class CustomTextFormField extends StatelessWidget {
     this.initialValue,
     this.enabled,
     this.visible = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

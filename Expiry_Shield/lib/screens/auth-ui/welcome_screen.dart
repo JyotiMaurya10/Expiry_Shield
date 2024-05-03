@@ -1,9 +1,9 @@
-import 'package:ecommerce_app/utils/app_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../controllers/google_sign_in_controller.dart';
+import '../../utils/app_constant.dart';
 import 'sign_in.dart';
 
 class WelcomeScreen extends StatelessWidget {

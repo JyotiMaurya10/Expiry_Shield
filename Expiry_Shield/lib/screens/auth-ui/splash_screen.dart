@@ -1,13 +1,13 @@
 import 'dart:async';
-import 'package:ecommerce_app/screens/auth-ui/welcome_screen.dart';
-import 'package:ecommerce_app/utils/app_constant.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import '../../controllers/get_user_data_controller.dart';
+import '../../utils/app_constant.dart';
 import '../admin-panel/admin_panel.dart';
 import '../user-panel/main_screen.dart';
+import 'welcome_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

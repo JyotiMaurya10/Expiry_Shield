@@ -1,5 +1,3 @@
-// ignore_for_file: file_names
-
 class UserModel {
   final String uId;
   final String username;
@@ -31,7 +29,6 @@ class UserModel {
     required this.city,
   });
 
-  // Serialize the UserModel instance to a JSON map
   Map<String, dynamic> toMap() {
     return {
       'uId': uId,

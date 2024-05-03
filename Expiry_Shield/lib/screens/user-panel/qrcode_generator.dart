@@ -1,10 +1,7 @@
-// import 'dart:html';
-// cimport 'dart:typed_data';
-
-import 'package:ecommerce_app/utils/app_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 // import 'package:screenshot/screenshot.dart';
+import '../../utils/app_constant.dart';
 import '../../widgets/textformfield_widget.dart';
 
 class QRcodeGenerator extends StatelessWidget {

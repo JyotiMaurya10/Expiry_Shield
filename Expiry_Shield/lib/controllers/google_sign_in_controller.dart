@@ -1,13 +1,8 @@
-// ignore_for_file: file_names, unused_local_variable, unused_field, avoid_print
-
 import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:e_comm/controllers/get-device-token-controller.dart';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-
 import '../models/user_model.dart';
 import '../screens/user-panel/main_screen.dart';
 import 'get_device_token_controller.dart';
@@ -45,7 +40,6 @@ class GoogleSignInController extends GetxController {
             email: user.email.toString(),
             phone: user.phoneNumber.toString(),
             userImg: user.photoURL.toString(),
-            // userDeviceToken: '',
             userDeviceToken: getDeviceTokenController.deviceToken.toString(),
             country: '',
             userAddress: '',

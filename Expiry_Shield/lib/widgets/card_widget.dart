@@ -7,11 +7,11 @@ class CustomCard extends StatelessWidget {
   final String buttonText;
 
   const CustomCard({
-    Key? key,
+    super.key,
     required this.iconData,
     required this.onPressed,
     required this.buttonText,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

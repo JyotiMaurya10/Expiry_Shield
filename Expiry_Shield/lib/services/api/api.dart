@@ -1,11 +1,10 @@
-import 'dart:convert'; // For JSON encoding and decoding
-import 'package:flutter/foundation.dart'; // For debugPrint
-import '../../models/product_info.dart'; // For making HTTP requests
+import 'dart:convert';
+import 'package:flutter/foundation.dart';
+import '../../models/product_info.dart';
 import 'package:http/http.dart' as http;
 
 class Api {
-  // 192.168.137.188
-  static const baseUrl = "http://192.168.137.188:2000/api/";
+  static const baseUrl = "http://__IP_Address__:2000/api/";
 
   static addproduct(Map pdata) async {
     var url = Uri.parse("${baseUrl}add_product");
@@ -27,7 +26,7 @@ class Api {
   static getProduct({String? bNumber}) async {
     List<ProductInfo> products = [];
     print(bNumber);
-    var url = Uri.parse("${baseUrl}get_product"); // :id
+    var url = Uri.parse("${baseUrl}get_product");
     try {
       final res = await http.get(url);
       if (res.statusCode == 200) {
@@ -39,10 +38,6 @@ class Api {
           }
 
           for (var value in data) {
-            print(value['pcategory']);
-            print("🔴🔴🔴🔴🔴🔴🔴🔴");
-            print("🔴🔴🔴🔴🔴🔴🔴🔴");
-            print(bNumber);
             products.add(ProductInfo(
               id: value["_id"],
               bNumber: value['pbNumber'],
@@ -76,16 +71,11 @@ class Api {
   }
 
   static deleteProduct(
-      // id, List<ProductInfo> pdata, Function setStateCallback) async {
-      id,
-      List<ProductInfo> pdata,
-      Function setStateCallback) async {
+      id, List<ProductInfo> pdata, Function setStateCallback) async {
     var url = Uri.parse("${baseUrl}delete/$id");
     final res = await http.delete(url);
     if (res.statusCode == 200) {
-      //204 statusCode
-      int index = // Find the index of the product to be deleted
-          pdata.indexWhere((product) => product.id == id.toString());
+      int index = pdata.indexWhere((product) => product.id == id.toString());
       if (index != -1) {
         pdata.removeAt(index);
         setStateCallback();
@@ -96,5 +86,3 @@ class Api {
     }
   }
 }
-
-// to check in thunder client remove the ip address and write localhost eg: localhost:2000/api/get_product

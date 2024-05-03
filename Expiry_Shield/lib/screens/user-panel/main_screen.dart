@@ -99,11 +99,6 @@ class _MainScreenState extends State<MainScreen> {
                           CustomCard(
                             iconData: Icons.shopping_cart,
                             buttonText: "Buy",
-                            //  By adding the if (mounted) check, you ensure that the navigation only occurs if the widget is still mounted and valid.
-                            // This helps prevent potential issues related to using an invalid BuildContext.
-                            // In Flutter, the mounted property of a State object indicates whether the stateful widget associated with that state is currently included in the widget tree.
-                            // When you navigate to a new screen or perform any asynchronous operation that might complete after the widget has been removed
-                            // (for example, if the user navigates back quickly), it's important to check if the widget is still mounted before performing any operations that rely on its context.
                             onPressed: () async {
                               String scannedResult = await scanBarcodeNormal();
                               if (scannedResult != "-1") {

@@ -23,7 +23,7 @@ class ProductForm extends StatefulWidget {
   final ProductInfo? data;
 
   ProductForm({
-    Key? key,
+    super.key,
     required this.bnumberController,
     required this.nameController,
     required this.priceController,
@@ -36,7 +36,7 @@ class ProductForm extends StatefulWidget {
     this.submitORupdate = "Submit",
     this.buyORsell = "Buy",
     this.data,
-  }) : super(key: key);
+  });
   @override
   State<ProductForm> createState() => _ProductFormState();
 }
@@ -110,9 +110,7 @@ class _ProductFormState extends State<ProductForm> {
       }
     }
   }
-
-  // the initState and dispose methods are used in a Flutter StatefulWidget to manage the lifecycle of the widget's state and its associated resources
-  @override
+ @override
   void initState() {
     super.initState();
     // Add listeners to the controllers for changes
@@ -203,7 +201,6 @@ class _ProductFormState extends State<ProductForm> {
 
   @override
   Widget build(BuildContext context) {
-    print("✔️✔️✔️✔️✔️✔️✔️✔️✔️");
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
@@ -301,7 +298,7 @@ class _ProductFormState extends State<ProductForm> {
                         "pexpiry": widget.expiryController.text,
                         "pbestBefore": widget.bestBeforeController?.text,
                       };
-                      Api.addproduct(data); // pass to our method
+                      Api.addproduct(data); 
                       Navigator.of(context).pop();
                     }
                   }

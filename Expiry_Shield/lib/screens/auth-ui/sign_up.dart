@@ -58,7 +58,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Container(
                 alignment: Alignment.center,
                 child: const Text(
-                  "Welcome to Lovely Fashion",
+                  "Welcome to Expiry Shield",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -167,7 +167,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       decoration: InputDecoration(
                         hintText: "Password",
                         prefixIcon: const Icon(Icons.password),
-                        // suffixIcon: Icon(Icons.visibility_off),
                         suffixIcon: GestureDetector(
                           onTap: () {
                             signUpController.isPasswordVisible.toggle();

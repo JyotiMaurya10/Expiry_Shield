@@ -5,7 +5,7 @@ import '../../widgets/confirmdialogbox_widget.dart';
 import 'edit_form.dart';
 
 class AllProductScreen extends StatefulWidget {
-   AllProductScreen({Key? key}) : super(key: key);
+  const AllProductScreen({super.key});
   @override
   State<AllProductScreen> createState() => _AllProductScreenState();
 }
@@ -16,19 +16,16 @@ class _AllProductScreenState extends State<AllProductScreen> {
     return Scaffold(
       backgroundColor: Colors.black12,
       appBar: AppBar(
-        title:  const Text("All Products"),
+        title: const Text("All Products"),
         elevation: 0,
       ),
       body: Padding(
-        padding:  const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         child: FutureBuilder(
           future: Api.getProduct(),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
-            print("🔴🔴🔴🔴🔴 Data received: ${snapshot.hasData}");
-            print(snapshot.data);
-            print("🔴🔴🔴🔴🔴🔴🔴🔴");
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return  const Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             } else if (snapshot.hasError) {
@@ -36,7 +33,7 @@ class _AllProductScreenState extends State<AllProductScreen> {
                 child: Text('Error: ${snapshot.error}'),
               );
             } else if (!snapshot.hasData || snapshot.data == null) {
-              return  const Center(
+              return const Center(
                 child: Text('No data available'),
               );
             } else {
@@ -53,21 +50,17 @@ class _AllProductScreenState extends State<AllProductScreen> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          leading:  const CircleAvatar(
+                          leading: const CircleAvatar(
                             backgroundColor: Colors.black,
-                            // child: Text("1",
-                            //   // daysLeftText,
-                            //   style: TextStyle(color: Colors.white),
-                            // ),
                           ),
                           title: Text("${pdata[index].name}"),
                           subtitle: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text("Quantity: ${pdata[index].quantity}"),
-                               const SizedBox(height: 5),
+                              const SizedBox(height: 5),
                               Text("Price: ${pdata[index].price}"),
-                               const SizedBox(height: 5),
+                              const SizedBox(height: 5),
                               Text("Exp date: ${pdata[index].expiry}"),
                             ],
                           ),
@@ -77,7 +70,7 @@ class _AllProductScreenState extends State<AllProductScreen> {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 IconButton(
-                                  icon:  const Icon(Icons.delete),
+                                  icon: const Icon(Icons.delete),
                                   onPressed: () async {
                                     showDialog(
                                         context: context,
@@ -96,7 +89,7 @@ class _AllProductScreenState extends State<AllProductScreen> {
                                   },
                                 ),
                                 IconButton(
-                                  icon:  const Icon(Icons.keyboard_arrow_right),
+                                  icon: const Icon(Icons.keyboard_arrow_right),
                                   onPressed: () {
                                     showDialog(
                                         context: context,
@@ -122,7 +115,7 @@ class _AllProductScreenState extends State<AllProductScreen> {
                             ),
                           ),
                         ),
-                         const SizedBox(height: 10),
+                        const SizedBox(height: 10),
                       ],
                     );
                   },

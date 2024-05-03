@@ -1,5 +1,3 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 
 class KeyboardUtil {
@@ -8,9 +6,6 @@ class KeyboardUtil {
 
     if (!currentFocus.hasPrimaryFocus) {
       currentFocus.unfocus();
-      // ScaffoldMessenger.of(context).showSnackBar(
-      //   SnackBar(content: Text("Keyboard hidden")),
-      // );
 
     }
   }

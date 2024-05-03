@@ -5,7 +5,7 @@ import 'form.dart';
 
 class SellForm extends StatefulWidget {
   final String? scanResult;
-  const SellForm({Key? key, this.scanResult}) : super(key: key);
+  const SellForm({super.key, this.scanResult});
   @override
   State<SellForm> createState() => _SellFormState();
 }
@@ -17,9 +17,6 @@ class _SellFormState extends State<SellForm> {
       body: FutureBuilder(
           future: Api.getProduct(bNumber: widget.scanResult),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
-            print("🔴🔴🔴🔴🔴 Data received: ${snapshot.hasData}");
-            print(snapshot.data);
-            print("🔴🔴🔴🔴🔴🔴🔴🔴");
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const Center(
                 child: CircularProgressIndicator(),
@@ -35,8 +32,6 @@ class _SellFormState extends State<SellForm> {
             } else {
               List<ProductInfo> pdata = snapshot.data;
               if (!snapshot.hasData || snapshot.data == null || pdata.isEmpty) {
-                // Navigator.of(context).pop();
-                //  return _showAddDataDialog(context);
                 return Center(
                     child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -55,16 +50,8 @@ class _SellFormState extends State<SellForm> {
                     )
                   ],
                 ));
-                // showCustomSnackbar(context, "Please Add the data first");
-                // return _buildNoDataWidget(context);
               } else {
                 int index = 0;
-                // print("Name: ${pdata[index].name}");
-                // print("Quantity: ${pdata[index].quantity}");
-                // print("Price: ${pdata[index].price}");
-                // print("Exp date: ${pdata[index].id}");
-                // print("❤️❤️❤️❤️❤️❤️❤️");
-
                 return SafeArea(
                   child: ProductForm(
                     bnumberController:

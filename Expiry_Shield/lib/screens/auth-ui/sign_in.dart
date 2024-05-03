@@ -1,4 +1,3 @@
-import 'package:ecommerce_app/screens/auth-ui/welcome_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
@@ -11,6 +10,7 @@ import '../admin-panel/admin_panel.dart';
 import '../user-panel/main_screen.dart';
 import 'forget_password_screen.dart';
 import 'sign_up.dart';
+import 'welcome_screen.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
