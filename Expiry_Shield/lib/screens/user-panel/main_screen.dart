@@ -45,9 +45,7 @@ class _MainScreenState extends State<MainScreen> {
                       Text(
                         "Expiry Shield",
                         style: TextStyle(
-                            fontSize: 35,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
+                            fontSize: 35, color: Colors.white, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(
                         height: 5,
@@ -63,9 +61,8 @@ class _MainScreenState extends State<MainScreen> {
                   margin: const EdgeInsets.all(15),
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   height: 50,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20)),
+                  decoration:
+                      BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20)),
                   child: Row(
                     children: [
                       const Icon(Icons.search),
@@ -88,8 +85,7 @@ class _MainScreenState extends State<MainScreen> {
                   decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(30),
-                          topRight: Radius.circular(30))),
+                          topLeft: Radius.circular(30), topRight: Radius.circular(30))),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -112,12 +108,10 @@ class _MainScreenState extends State<MainScreen> {
                                     ),
                                   );
                                 } else {
-                                  print(
-                                      'Widget is not mounted. Cannot navigate.');
+                                  print('Widget is not mounted. Cannot navigate.');
                                 }
                               } else {
-                                print(
-                                    'Not navigating to next screen. scannedResult is -1.');
+                                print('Not navigating to next screen. scannedResult is -1.');
                               }
                             },
                           ),
@@ -147,26 +141,22 @@ class _MainScreenState extends State<MainScreen> {
                           children: [
                             ListView.builder(
                               shrinkWrap: true,
-                              itemCount: 3,
+                              itemCount: 5,
                               itemBuilder: (context, index) {
-                                final date =
-                                    DateTime.now().add(Duration(days: index));
+                                final date = DateTime.now().add(Duration(days: index));
                                 final groceryName = 'Grocery ${index + 1}';
-                                final expiryDate =
-                                    date.add(const Duration(days: 7));
+                                final expiryDate = date.add(const Duration(days: 7));
                                 return Card(
                                   color: AppConstant.appMainColor,
                                   elevation: 4,
                                   child: ListTile(
                                     title: Text(
                                       'Date: ${date.toString()}',
-                                      style:
-                                          const TextStyle(color: Colors.white),
+                                      style: const TextStyle(color: Colors.white),
                                     ),
                                     subtitle: Text(
                                       'Grocery: $groceryName\nExpiry: ${expiryDate.toString()}',
-                                      style:
-                                          const TextStyle(color: Colors.white),
+                                      style: const TextStyle(color: Colors.white),
                                     ),
                                   ),
                                 );
@@ -188,8 +178,8 @@ class _MainScreenState extends State<MainScreen> {
   Future<String> scanBarcodeNormal() async {
     String barcodeScanRes;
     try {
-      barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
-          "#ff6666", "Cancel", true, ScanMode.BARCODE);
+      barcodeScanRes =
+          await FlutterBarcodeScanner.scanBarcode("#ff6666", "Cancel", true, ScanMode.BARCODE);
     } on PlatformException {
       barcodeScanRes = "Failed to get platform version";
     }

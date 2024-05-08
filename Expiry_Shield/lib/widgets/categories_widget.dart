@@ -16,16 +16,11 @@ class Categories extends StatelessWidget {
               Text(
                 "Category",
                 style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: AppConstant.appMainColor),
+                    fontSize: 25, fontWeight: FontWeight.bold, color: AppConstant.appMainColor),
               ),
               Text(
                 "See All",
-                style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black54),
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black54),
               )
             ],
           ),
@@ -36,17 +31,13 @@ class Categories extends StatelessWidget {
             children: [
               for (int i = 1; i < 8; i++)
                 Container(
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   height: 50,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white,
                     boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 1,
-                          blurRadius: 6)
+                      BoxShadow(color: Colors.grey.withOpacity(0.5), spreadRadius: 1, blurRadius: 6)
                     ],
                   ),
                   child: const Row(children: [
@@ -61,8 +52,7 @@ class Categories extends StatelessWidget {
                       padding: EdgeInsets.only(right: 5),
                       child: Text(
                         "Category",
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold),
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                     ),
                   ]),
